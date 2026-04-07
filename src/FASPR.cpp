@@ -22,7 +22,7 @@ using namespace std;
 string PROGRAM_PATH=(string)".";
 string ROTLIB2010=(string)"dun2010bbdep.bin";
 
-int main(int argc,char** argv)
+int faspr(int argc,char** argv)
 {
   cout<<"###########################################################################"<<endl;
   cout<<"                    FASPR (Version 20200309)                 "<<endl;
@@ -52,13 +52,15 @@ int main(int argc,char** argv)
   /**********************************************************/
   char fullpath[2048];
   strcpy(fullpath,argv[0]);
-  for(int i = strlen(fullpath); i >= 0; --i){
-    if(fullpath[i]=='/' || fullpath[i]=='\\'){
-      fullpath[i + 1]='\0';
-      break;
-    }
-  }
+  // for(int i = strlen(fullpath); i >= 0; --i){
+  //   if(fullpath[i]=='/' || fullpath[i]=='\\'){
+  //     fullpath[i + 1]='\0';
+  //     break;
+  //   }
+  // }
   PROGRAM_PATH=(string)fullpath;
+
+  printf("%s\n", PROGRAM_PATH.c_str());
   string rotfile=PROGRAM_PATH+"/"+ROTLIB2010;
   fstream infile(rotfile.c_str(),ios::in|ios::binary);
   if(!infile){
