@@ -60,7 +60,7 @@ int faspr(int argc,char** argv)
   // }
   PROGRAM_PATH=(string)fullpath;
 
-  printf("%s\n", PROGRAM_PATH.c_str());
+  //printf("%s\n", PROGRAM_PATH.c_str());
   string rotfile=PROGRAM_PATH+"/"+ROTLIB2010;
   fstream infile(rotfile.c_str(),ios::in|ios::binary);
   if(!infile){
@@ -71,29 +71,37 @@ int faspr(int argc,char** argv)
     infile.close();
   }
 
-  string pdbin=(string)"example/1mol.pdb";
-  string pdbout=(string)"example/1mol_FASPR.pdb";
-  string seqfile=(string)"void";
+  // string pdbin=(string)"example/1mol.pdb";
+  // string pdbout=(string)"example/1mol_FASPR.pdb";
+  string pdbin = argv[1];
+  string pdbout = argv[2];
+
+  string seqfile=argv[3];
 
   bool sflag=false;
-  int i;
-  for(i=1;i<argc-1;i++){
-   if(argv[i][0]=='-'){
-     if(argv[i][1]=='i'){
-       i++;
-       pdbin=argv[i];
-     }
-     else if(argv[i][1]=='o'){
-       i++;
-       pdbout=argv[i];
-     }
-     else if(argv[i][1]=='s'){
-       i++;
-       seqfile=argv[i];
-       sflag=true;
-     }
-   }
+  //int i;
+  // for(i=1;i<argc-1;i++){
+  //  if(argv[i][0]=='-'){
+  //    if(argv[i][1]=='i'){
+  //      i++;
+  //      pdbin=argv[i];
+  //    }
+  //    else if(argv[i][1]=='o'){
+  //      i++;
+  //      pdbout=argv[i];
+  //    }
+  //    else if(argv[i][1]=='s'){
+  //      i++;
+  //      seqfile=argv[i];
+  //      sflag=true;
+  //    }
+  //  }
+  // }
+
+  if(!seqfile.empty()){
+    sflag=true;
   }
+    
   
   Solution faspr;
   faspr.ReadPDB(pdbin);

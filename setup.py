@@ -16,7 +16,6 @@ setup(
         Extension(
             name="py_FASPR._core",
             sources=sources,
-            include_dirs=[os.path.relpath(src_dir, here)],
             extra_compile_args=["-std=c++17"],
         ),
     ],
