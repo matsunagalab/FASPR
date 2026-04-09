@@ -10,6 +10,8 @@ src_dir = os.path.join(here, "src")
 sources = [os.path.relpath(f, here) for f in glob.glob(os.path.join(src_dir, "*.cpp"))]
 
 setup(
+    name="py_FASPR",
+    version="0.2.0",
     packages=["py_FASPR"],
     package_data={"py_FASPR": ["data/*"]},
     ext_modules=[
