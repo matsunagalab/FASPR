@@ -5,6 +5,3 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "py_FASPR"
 version = "0.2.0"
-
-[tool.setuptools.package-data]                                                                                                                                                                   
-"py_FASPR.data" = ["src/dun2010bbdep.bin"]
