@@ -16,12 +16,9 @@ py_FASPR.faspr(input_pdb='input.pdb', output_pdb='output.pdb', seq_file='seq.txt
 ```
 
 # INSTALLATION
-
-Currently, the only method available is to clone and install this repository.
+Using pip:
 ```
-git clone https://github.com/matsunagalab/FASPR.git
-cd FASPR
-pip install -e .
+pip install git+https://github.com/matsunagalab/FASPR
 ```
 
 # COPYRIGHT & CONTACT
